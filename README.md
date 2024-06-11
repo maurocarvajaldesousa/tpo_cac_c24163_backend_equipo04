@@ -18,6 +18,7 @@
 
 ## Base de datos para nuestro proyecto de backend 🗃️
 **DER del proyecto backend:**
+https://github.com/maurocarvajaldesousa/tpo_cac_c24163_backend_equipo04/blob/3b03cbf8f100e568ce9e1f2871d35bde64611331/database_scripts/centrosalamone_db.jpg
 
 **Acceso al script de creación del esquema para el proyecto backend:**
 
