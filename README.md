@@ -9,7 +9,7 @@
 | Clabel, Diana |
 | Carvajal de Sousa, Mauro |
 
-## Entregables Frontend :white_check_mark:
+## Bitácora de entregables Proyecto Frontend :white_check_mark:
 **Acceso a la página web del proyecto front:**
 <a href="https://centrosalamone-dev.netlify.app/" target="_blank">Centro Salamone Saldungaray</a>
 
