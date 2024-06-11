@@ -17,7 +17,7 @@
 **Acceso al repositorio del proyecto front:**
 <a href="https://github.com/maurocarvajaldesousa/tpo_cac_c24163_equipo10" target="_blank">Github proyecto front del Centro Salamone Saldungaray</a>
 
-## Base de datos para nuestro proyecto de backend 🗃️
+## Base de datos para nuestro Proyecto de Backend 🗃️
 
 **DER del proyecto backend:**
 ![centrosalamone_db](https://github.com/maurocarvajaldesousa/tpo_cac_c24163_backend_equipo04/assets/1665906/ecf9d4cd-6b3f-438d-8db7-0cbd8c9f90d3)
