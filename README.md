@@ -4,7 +4,6 @@
 
 | **Apellido, Nombre** |
 | -------------------- |
-| Sessa, Anabella |
 | Favara, Jésica |
 | Clabel, Diana |
 | Carvajal de Sousa, Mauro |
