@@ -1,22 +1,14 @@
-from flask import jsonify
+from flask import Blueprint, jsonify
 from app.models import Obra
 
+bp = Blueprint('main', __name__)
+
+@bp.route('/')
 def index():
-  response = {'message': 'Usando API-REST Flask!'}
-  return jsonify(response)
+    response = {'message': 'Usando API-REST Flask!'}
+    return jsonify(response)
 
-# def get_all_obras():
-#   response = {'message': 'Listar todas las obras!'}
-#   return jsonify(response)
-
-# def get_all_obras():
-#   result_movies = Obra.get_all()
-#   return jsonify(result_movies)
-  
-# def get_all_movies():
-#     movies = Movie.get_all()
-#     return jsonify([movie.serialize() for movie in movies])
-
+@bp.route('/api/obras', methods=['GET'])
 def get_all_obras():
-  obras = Obra.get_all()
-  return jsonify([obra.serialize() for obra in obras])
+    obras = Obra.get_all()
+    return jsonify([obra.serialize() for obra in obras])
