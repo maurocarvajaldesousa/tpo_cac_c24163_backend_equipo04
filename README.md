@@ -31,15 +31,16 @@
 
 ## Índice
 
-- [Obtener todas las obras](#obtener-todas-las-obras)
-- [Crear una obra](#crear-una-obra)
-- [Obtener una obra específica](#obtener-una-obra-específica)
-- [Actualizar una obra](#actualizar-una-obra)
-- [Eliminar una obra](#eliminar-una-obra)
-- [Obtener todas las rutas](#obtener-todas-las-rutas)
-- [Obtener todas las categorías](#obtener-todas-las-categorías)
+- Obtener todas las obras: (GET /api/obras)
+- Crear una obra: (POST /api/obras)
+- Obtener una obra específica: (GET /api/obras/<int:id_obra>)
+- Actualizar una obra: (PUT /api/obras/<int:id_obra>)
+- Eliminar una obra: (DELETE /api/obras/<int:id_obra>)
+- Obtener todas las rutas: (GET /api/rutas)
+- Obtener todas las categorías: (GET /api/categorias)
 
 ## Obtener todas las obras
+
 Este endpoint permite obtener todas las obras almacenadas en la base de datos.
 
 ```
@@ -82,6 +83,7 @@ GET /api/obras
 
 
 ## Crear una obra
+
 Este endpoint permite crear una nueva obra.
 
 ```
@@ -107,6 +109,7 @@ POST /api/obras
 
 
 ## Obtener una obra específica
+
 Este endpoint permite obtener los detalles de una obra específica mediante su identificador.
 
 ```
@@ -133,6 +136,7 @@ GET /api/obras/<int:id_obra>
 
 
 ## Actualizar una obra
+
 Este endpoint permite actualizar los detalles de una obra existente.
 
 ```
@@ -157,6 +161,7 @@ PUT /api/obras/<int:id_obra>
 }
 
 ## Eliminar una obra
+
 Este endpoint permite eliminar una obra existente.
 
 ```
@@ -164,6 +169,7 @@ DELETE /api/obras/<int:id_obra>
 ```
 
 ## Obtener todas las rutas
+
 Este endpoint permite obtener todas las rutas disponibles.
 
 ```
@@ -171,6 +177,7 @@ GET /api/rutas
 ```
 
 ## Obtener todas las categorías
+
 Este endpoint permite obtener todas las categorías disponibles.
 
 ```
