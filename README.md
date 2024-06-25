@@ -45,7 +45,6 @@ Este endpoint permite obtener todas las obras almacenadas en la base de datos.
 
 ```
 GET /api/obras
-```
 
 **Ejemplo de respuesta:**
 
@@ -88,7 +87,6 @@ Este endpoint permite crear una nueva obra.
 
 ```
 POST /api/obras
-```
 
 **Ejemplo de solicitud (JSON):**
 
@@ -114,7 +112,6 @@ Este endpoint permite obtener los detalles de una obra específica mediante su i
 
 ```
 GET /api/obras/<int:id_obra>
-```
 
 **Ejemplo de respuesta:**
 
@@ -141,7 +138,6 @@ Este endpoint permite actualizar los detalles de una obra existente.
 
 ```
 PUT /api/obras/<int:id_obra>
-```
 
 **Ejemplo de solicitud (JSON):**
 
@@ -166,7 +162,6 @@ Este endpoint permite eliminar una obra existente.
 
 ```
 DELETE /api/obras/<int:id_obra>
-```
 
 ## Obtener todas las rutas
 
@@ -174,7 +169,6 @@ Este endpoint permite obtener todas las rutas disponibles.
 
 ```
 GET /api/rutas
-```
 
 ## Obtener todas las categorías
 
@@ -182,4 +176,3 @@ Este endpoint permite obtener todas las categorías disponibles.
 
 ```
 GET /api/categorias
-```
