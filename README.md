@@ -39,56 +39,8 @@
 - Obtener todas las rutas: (GET /api/rutas)
 - Obtener todas las categorías: (GET /api/categorias)
 
-## Obtener todas las obras
 
-Este endpoint permite obtener todas las obras almacenadas en la base de datos.
-
-```
-GET /api/obras
-
-**Ejemplo de respuesta:**
-
-```json
-[
-    {
-        "id_obra": 1,
-        "descripcion": "Descripción de la obra 1",
-        "anio": 2021,
-        "partido": "Partido 1",
-        "localidad": "Localidad 1",
-        "latitud": 123.456,
-        "longitud": 789.012,
-        "gmaps": "URL de Google Maps",
-        "imagen": "URL de la imagen",
-        "ruta": 1,
-        "categoria": 1,
-        "estado": 1
-    },
-    {
-        "id_obra": 2,
-        "descripcion": "Descripción de la obra 2",
-        "anio": 2022,
-        "partido": "Partido 2",
-        "localidad": "Localidad 2",
-        "latitud": 456.789,
-        "longitud": 012.345,
-        "gmaps": "URL de Google Maps",
-        "imagen": "URL de la imagen",
-        "ruta": 2,
-        "categoria": 1,
-        "estado": 1
-    }
-]
-
-
-## Crear una obra
-
-Este endpoint permite crear una nueva obra.
-
-```
-POST /api/obras
-
-**Ejemplo de solicitud (JSON):**
+**Ejemplo de solicitud (JSON) para crear una obra:**
 
 ```json
 {
@@ -106,40 +58,7 @@ POST /api/obras
 }
 
 
-## Obtener una obra específica
-
-Este endpoint permite obtener los detalles de una obra específica mediante su identificador.
-
-```
-GET /api/obras/<int:id_obra>
-
-**Ejemplo de respuesta:**
-
-```json
-{
-    "id_obra": 1,
-    "descripcion": "Descripción de la obra 1",
-    "anio": 2021,
-    "partido": "Partido 1",
-    "localidad": "Localidad 1",
-    "latitud": 123.456,
-    "longitud": 789.012,
-    "gmaps": "URL de Google Maps",
-    "imagen": "URL de la imagen",
-    "ruta": 1,
-    "categoria": 1,
-    "estado": 1
-}
-
-
-## Actualizar una obra
-
-Este endpoint permite actualizar los detalles de una obra existente.
-
-```
-PUT /api/obras/<int:id_obra>
-
-**Ejemplo de solicitud (JSON):**
+**Ejemplo de solicitud (JSON) para actualizar una obra:**
 
 ```json
 {
@@ -156,23 +75,3 @@ PUT /api/obras/<int:id_obra>
     "estado": "Estado actualizado de la obra"
 }
 
-## Eliminar una obra
-
-Este endpoint permite eliminar una obra existente.
-
-```
-DELETE /api/obras/<int:id_obra>
-
-## Obtener todas las rutas
-
-Este endpoint permite obtener todas las rutas disponibles.
-
-```
-GET /api/rutas
-
-## Obtener todas las categorías
-
-Este endpoint permite obtener todas las categorías disponibles.
-
-```
-GET /api/categorias
