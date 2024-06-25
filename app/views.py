@@ -1,69 +1,63 @@
-from flask import Blueprint, jsonify, request, abort
-from app.models import Obra
+from flask import request, jsonify
+from app.models import Obra, Ruta, Categoria
+from app.database import get_db
 
-bp = Blueprint('main', __name__)
-
-@bp.route('/')
 def index():
     response = {'message': 'Usando API-REST Flask!'}
     return jsonify(response)
 
-@bp.route('/api/obras', methods=['GET'])
 def get_all_obras():
     obras = Obra.get_all()
     return jsonify([obra.serialize() for obra in obras])
 
-@bp.route('/api/obras/<int:id_obra>', methods=['GET'])
 def get_obra(id_obra):
     obra = Obra.get_by_id(id_obra)
     if obra is None:
-        abort(404)
+        return jsonify({'error': 'Obra no encontrada'}), 404
     return jsonify(obra.serialize())
 
-@bp.route('/api/obras', methods=['POST'])
+def validate_foreign_keys(ruta, categoria):
+    return Ruta.exists(ruta) and Categoria.exists(categoria)
+
 def create_obra():
     data = request.get_json()
-    obra = Obra(
-        descripcion=data.get('descripcion'),
-        anio=data.get('anio'),
-        partido=data.get('partido'),
-        localidad=data.get('localidad'),
-        latitud=data.get('latitud'),
-        longitud=data.get('longitud'),
-        gmaps=data.get('gmaps'),
-        imagen=data.get('imagen'),
-        ruta=data.get('ruta'),
-        categoria=data.get('categoria'),
-        estado=data.get('estado')
-    )
-    obra.save()
+    ruta = data.get('ruta')
+    categoria = data.get('categoria')
+
+    if not validate_foreign_keys(ruta, categoria):
+        return jsonify({'error': 'Ruta o Categoria inválida'}), 400
+
+    obra = Obra(**data)
+    obra.insert()
     return jsonify(obra.serialize()), 201
 
-@bp.route('/api/obras/<int:id_obra>', methods=['PUT'])
 def update_obra(id_obra):
+    data = request.get_json()
+    ruta = data.get('ruta')
+    categoria = data.get('categoria')
+
+    if not validate_foreign_keys(ruta, categoria):
+        return jsonify({'error': 'Ruta o Categoria inválida'}), 400
+
     obra = Obra.get_by_id(id_obra)
     if obra is None:
-        abort(404)
-    
-    data = request.get_json()
-    obra.descripcion = data.get('descripcion', obra.descripcion)
-    obra.anio = data.get('anio', obra.anio)
-    obra.partido = data.get('partido', obra.partido)
-    obra.localidad = data.get('localidad', obra.localidad)
-    obra.latitud = data.get('latitud', obra.latitud)
-    obra.longitud = data.get('longitud', obra.longitud)
-    obra.gmaps = data.get('gmaps', obra.gmaps)
-    obra.imagen = data.get('imagen', obra.imagen)
-    obra.ruta = data.get('ruta', obra.ruta)
-    obra.categoria = data.get('categoria', obra.categoria)
-    obra.estado = data.get('estado', obra.estado)
-    obra.save()
-    return jsonify(obra.serialize())
+        return jsonify({'error': 'Obra no encontrada'}), 404
 
-@bp.route('/api/obras/<int:id_obra>', methods=['DELETE'])
+    obra.update(data)
+    return jsonify(obra.serialize()), 200
+
 def delete_obra(id_obra):
     obra = Obra.get_by_id(id_obra)
     if obra is None:
-        abort(404)
-    obra.delete()
-    return '', 204
+        return jsonify({'error': 'Obra no encontrada'}), 404
+
+    Obra.delete(id_obra)
+    return jsonify({'message': 'Obra eliminada'}), 200
+
+def get_all_rutas():
+    rutas = Ruta.get_all()
+    return jsonify([ruta.serialize() for ruta in rutas])
+
+def get_all_categorias():
+    categorias = Categoria.get_all()
+    return jsonify([categoria.serialize() for categoria in categorias])

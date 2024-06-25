@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 # Cargar variables de entorno desde el archivo .env
 load_dotenv()
 
-# Validar que todas las variables de entorno necesarias estén presentes. La variable DB_PASSWORD la omití para salvar excepción de password vacío
+# Validar que todas las variables de entorno necesarias estén presentes.
+# La variable DB_PASSWORD la omití para salvar excepción de password vacío
 required_env_vars = ['DB_USERNAME', 'DB_HOST', 'DB_NAME']
 for var in required_env_vars:
     if not os.getenv(var):
