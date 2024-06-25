@@ -56,6 +56,7 @@
     "categoria": 1,
     "estado": 1
 }
+```
 
 
 **Ejemplo de solicitud (JSON) para actualizar una obra:**
@@ -74,4 +75,5 @@
     "categoria": 1,
     "estado": "Estado actualizado de la obra"
 }
+```
 
