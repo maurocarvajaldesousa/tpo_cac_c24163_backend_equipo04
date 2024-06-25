@@ -27,9 +27,7 @@
 **Acceso al script de generación de data de prueba para el proyecto backend:**
 <a href="https://github.com/maurocarvajaldesousa/tpo_cac_c24163_backend_equipo04/blob/c231a99012c7d607b45d1f7f963bff1e888dc3ed/database_scripts/centrosalamone_db_data.sql" target="_blank">Script insertado de datos de prueba en la base de datos</a>
 
-# Documentación de Endpoints disponibles
-
-## Índice
+## Documentación de Endpoints disponibles
 
 - Obtener todas las obras: (GET /api/obras)
 - Crear una obra: (POST /api/obras)
@@ -68,7 +66,7 @@
     "partido": "Partido actualizado",
     "localidad": "Localidad actualizada",
     "latitud": 456.789,
-    "longitud": 012.345,
+    "longitud": 987.789,
     "gmaps": "URL actualizada de Google Maps",
     "imagen": "URL actualizada de la imagen",
     "ruta": 2,
