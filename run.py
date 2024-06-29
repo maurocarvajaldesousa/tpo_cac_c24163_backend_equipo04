@@ -1,9 +1,13 @@
 from flask import Flask
+from flask_cors import CORS
 from app.views import *
 from app.database import init_app
 
 # Inicialización de app con Flask
 app = Flask(__name__)
+
+# Configurar CORS para todos los orígenes
+CORS(app)
 
 init_app(app)
 
