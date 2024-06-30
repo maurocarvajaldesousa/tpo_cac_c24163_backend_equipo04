@@ -1,11 +1,11 @@
 # Repo de nuestro TPO Backend CaC 2024 - Equipo #04 📃
 
-## Integrantes del equipo :construction: 
+## Integrantes del equipo :construction:
 
-| **Apellido, Nombre** |
-| -------------------- |
-| Favara, Jésica |
-| Clabel, Diana |
+| **Apellido, Nombre**     |
+| ------------------------ |
+| Favara, Jésica           |
+| Clabel, Diana            |
 | Carvajal de Sousa, Mauro |
 
 ## Bitácora de entregables Proyecto Frontend :white_check_mark:
@@ -37,41 +37,38 @@
 - Obtener todas las rutas: (GET /api/rutas)
 - Obtener todas las categorías: (GET /api/categorias)
 
-
 **Ejemplo de solicitud (JSON) para crear una obra:**
 
 ```json
 {
-    "descripcion": "Nueva obra",
-    "anio": 2023,
-    "partido": "Nuevo Partido",
-    "localidad": "Nueva Localidad",
-    "latitud": 123.456,
-    "longitud": 789.012,
-    "gmaps": "Nueva URL de Google Maps",
-    "imagen": "Nueva URL de la imagen",
-    "ruta": 1,
-    "categoria": 1,
-    "estado": 1
+  "descripcion": "Nueva obra",
+  "anio": 2023,
+  "partido": "Nuevo Partido",
+  "localidad": "Nueva Localidad",
+  "latitud": 123.456,
+  "longitud": 789.012,
+  "gmaps": "Nueva URL de Google Maps",
+  "imagen": "Nueva URL de la imagen",
+  "ruta": 1,
+  "categoria": 1,
+  "estado": 1
 }
 ```
-
 
 **Ejemplo de solicitud (JSON) para actualizar una obra:**
 
 ```json
 {
-    "descripcion": "Descripción actualizada",
-    "anio": 2022,
-    "partido": "Partido actualizado",
-    "localidad": "Localidad actualizada",
-    "latitud": 456.789,
-    "longitud": 987.789,
-    "gmaps": "URL actualizada de Google Maps",
-    "imagen": "URL actualizada de la imagen",
-    "ruta": 2,
-    "categoria": 1,
-    "estado": "Estado actualizado de la obra"
+  "descripcion": "Descripción actualizada",
+  "anio": 2022,
+  "partido": "Partido actualizado",
+  "localidad": "Localidad actualizada",
+  "latitud": 456.789,
+  "longitud": 987.789,
+  "gmaps": "URL actualizada de Google Maps",
+  "imagen": "URL actualizada de la imagen",
+  "ruta": 2,
+  "categoria": 1,
+  "estado": 1
 }
 ```
-
