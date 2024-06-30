@@ -37,38 +37,57 @@
 - Obtener todas las rutas: (GET /api/rutas)
 - Obtener todas las categorías: (GET /api/categorias)
 
+### EJEMPLOS PARA TESTEAR ENDPOINTS UTILIZANDO POSTMAN Ó THUNDER CLIENT
+
+**Ejemplos de solicitud (JSON) para home, listar obras, listar categorías y listar rutas:**
+
+- GET http://127.0.0.1:5000/
+- GET http://127.0.0.1:5000/api/obras
+- GET http://127.0.0.1:5000/api/categorias
+- GET http://127.0.0.1:5000/api/rutas
+
 **Ejemplo de solicitud (JSON) para crear una obra:**
 
-```json
-{
-  "descripcion": "Nueva obra",
-  "anio": 2023,
-  "partido": "Nuevo Partido",
-  "localidad": "Nueva Localidad",
-  "latitud": 123.456,
-  "longitud": 789.012,
-  "gmaps": "Nueva URL de Google Maps",
-  "imagen": "Nueva URL de la imagen",
-  "ruta": 1,
-  "categoria": 1,
-  "estado": 1
-}
-```
-
-**Ejemplo de solicitud (JSON) para actualizar una obra:**
+- POST http://127.0.0.1:5000/api/obras
 
 ```json
 {
-  "descripcion": "Descripción actualizada",
-  "anio": 2022,
-  "partido": "Partido actualizado",
-  "localidad": "Localidad actualizada",
-  "latitud": 456.789,
-  "longitud": 987.789,
-  "gmaps": "URL actualizada de Google Maps",
-  "imagen": "URL actualizada de la imagen",
-  "ruta": 2,
+  "anio": "1950",
   "categoria": 1,
-  "estado": 1
+  "descripcion": "Obra de prueba",
+  "estado": 1,
+  "gmaps": "https://maps.app.goo.gl/ACfZ52YgRNcAsrTE6",
+  "id_obra": 1,
+  "imagen": "https://raw.githubusercontent.com/maurocarvajaldesousa/tpo_cac_c24163_equipo10/main/img/obras/obra_01.png",
+  "latitud": "-38.089060",
+  "localidad": "SALDUNGARAY",
+  "longitud": "-62.216740",
+  "partido": "TORNQUIST",
+  "ruta": 1
 }
 ```
+
+**Ejemplo de solicitud (JSON) para actualizar la obra con id 22:**
+
+- PUT http://127.0.0.1:5000/api/obras/22
+
+```json
+{
+  "anio": "1950",
+  "categoria": 1,
+  "descripcion": "Obra editada",
+  "estado": 1,
+  "gmaps": "https://maps.app.goo.gl/ACfZ52YgRNcAsrTE6",
+  "id_obra": 1,
+  "imagen": "https://raw.githubusercontent.com/maurocarvajaldesousa/tpo_cac_c24163_equipo10/main/img/obras/obra_01.png",
+  "latitud": "-38.089060",
+  "localidad": "SALDUNGARAY",
+  "longitud": "-62.216740",
+  "partido": "TORNQUIST",
+  "ruta": 1
+}
+```
+
+**Ejemplo de solicitud (JSON) para eliminar la obra con id 22:**
+
+- DELETE http://127.0.0.1:5000/api/obras/22
